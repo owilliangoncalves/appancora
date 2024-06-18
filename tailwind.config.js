@@ -15,11 +15,11 @@ export default {
           default: '768px',
         },
       },
-    },
-    colors: {
-      'azul-ancora': '#023a5d',
-      'vermelho-ancora': '#d02131',
-      fundo: '#FCFCFF',
+      colors: {
+        'azul-ancora': '#023a5d',
+        'vermelho-ancora': '#d02131',
+        fundo: '#FCFCFF',
+      },
     },
   },
   plugins: [],
