@@ -1,3 +1,15 @@
+.Nunito {
+  font-family: 'Nunito', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: bold;
+}
+
 @tailwind base;
+
+.containerResponsive {
+  @apply container p-8;
+}
+
 @tailwind components;
 @tailwind utilities;

@@ -3,12 +3,14 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'bg-preto': "url('public/bg.png')",
+      },
       aspectRatio: {
         '9/16': '9/16',
       },
       container: {
         center: true,
-        padding: '2rem',
         screens: {
           default: '768px',
         },
