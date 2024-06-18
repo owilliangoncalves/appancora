@@ -2,7 +2,20 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'bg-preto': "url('public/bg.png')",
+      },
+      aspectRatio: {
+        '9/16': '9/16',
+      },
+      container: {
+        center: true,
+        screens: {
+          default: '768px',
+        },
+      },
+    },
     colors: {
       'azul-ancora': '#023a5d',
       'vermelho-ancora': '#d02131',
