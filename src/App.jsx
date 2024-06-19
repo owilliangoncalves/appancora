@@ -12,7 +12,7 @@ export default function App() {
   }
   return (
     <>
-      <section className='bg-bg-preto h-[100vh] bg-cover container'>
+      <section className='bg-bg-preto grid grid-rows-5 h-[100vh]  bg-cover container'>
         <Logo />
         <div className='flex justify-center'>
           <img src={kitImage} alt='Kit peças' />
