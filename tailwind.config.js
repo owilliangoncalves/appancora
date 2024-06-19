@@ -18,7 +18,8 @@ export default {
       colors: {
         'azul-ancora': '#023a5d',
         'vermelho-ancora': '#d02131',
-        fundo: '#FCFCFF',
+        fundo: 'rgba(252, 252, 255, 0.95)',
+        'azul-ancora-muted': 'rgba(2, 58,93, 0.3)',
       },
     },
   },
