@@ -7,7 +7,6 @@ import Modal from './components/modal';
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
-
   function mostraModal() {
     setOpen(!open);
   }
