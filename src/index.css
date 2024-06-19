@@ -7,6 +7,10 @@
 
 @tailwind base;
 
+.textButton {
+  @apply bg-azul-ancora py-6 px-3 rounded-full text-white uppercase hover:bg-vermelho-ancora ease-in duration-300;
+}
+
 .containerResponsive {
   @apply container p-8;
 }
