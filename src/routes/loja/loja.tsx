@@ -2,7 +2,7 @@ import React from 'react';
 import Propaganda from '../../components/brand';
 import SideMenu from '../../components/sideMenu';
 import SearchBar from '../../components/searchBar';
-// import Button from '../../components/button';
+import ButtonFilter from '../../components/buttonFilter';
 import Produto from '../../components/produto';
 
 const Loja = () => {
@@ -18,9 +18,11 @@ const Loja = () => {
         <article className='col-start-2 col-span-2 grid grid-cols-3'>
           <div className=' col-span-3 m-3 items-start gap-3'>
             <SearchBar />
-            {/* <Button texto='Nome da peça'></Button>
-            <Button texto='Fabricante'></Button>
-            <Button texto='Tipo'></Button> */}
+            <div className='flex gap-5 justify-between'>
+              <ButtonFilter texto='Nome da peça'></ButtonFilter>
+              <ButtonFilter texto='Fabricante'></ButtonFilter>
+              <ButtonFilter texto='Tipo'></ButtonFilter>
+            </div>
           </div>
           <div className='gap-3'>
             <Produto />
