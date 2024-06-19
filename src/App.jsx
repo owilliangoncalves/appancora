@@ -6,10 +6,10 @@ import kitImage from '/public/kitImage.png';
 import Modal from './components/modal';
 
 export default function App() {
-  let [modal, setModal] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   function mostraModal() {
-    setModal(console.log('oi' + modal));
+    setOpen(!open);
   }
   return (
     <>
@@ -18,7 +18,7 @@ export default function App() {
         <div className='flex justify-center'>
           <img src={kitImage} alt='Kit peças' />
         </div>
-        <Modal />
+        <Modal IsTrue={open} />
         <div className=' flex justify-center'>
           <Button onClick={mostraModal} texto={'toque aqui para começar'} />
         </div>
