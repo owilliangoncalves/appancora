@@ -1,4 +1,5 @@
 import Button from './button';
+import mostraModal from '../App';
 
 export default function Modal({ IsTrue }) {
   if (IsTrue) {
@@ -11,7 +12,7 @@ export default function Modal({ IsTrue }) {
             </p>
             <div className='grid grid-cols-2'>
               <div>
-                <Button texto='com placa' />
+                <Button onClick={mostraModal} texto='com placa' />
                 <p className='text-azul-ancora'>
                   A busca por placa assegura que as peças exibidas são
                   específicas para o veículo.
