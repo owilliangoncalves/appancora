@@ -13,12 +13,14 @@ export default function App() {
   return (
     <>
       <section className='bg-bg-preto grid grid-rows-5 h-[100vh]  bg-cover container'>
+        main
         <Logo />
         <Image />
         <ButtonHome onClick={mostraModal} texto={'toque aqui para começar'} />
         <Modal IsTrue={open} />
         <Footer />
-      </section>
+      </section> */}
+      <Teclado />
     </>
   );
 }
