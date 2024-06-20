@@ -18,7 +18,7 @@ const Loja = () => {
         <article className='col-start-2 col-span-2 grid grid-cols-3'>
           <div className=' col-span-3 m-3 items-start gap-3'>
             <SearchBar />
-            <div className='flex gap-5 justify-between'>
+            <div className='grid grid-cols-3 gap-5 justify-between text-center'>
               <ButtonFilter texto='Nome da peça'></ButtonFilter>
               <ButtonFilter texto='Fabricante'></ButtonFilter>
               <ButtonFilter texto='Tipo'></ButtonFilter>
