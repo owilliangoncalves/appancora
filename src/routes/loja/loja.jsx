@@ -6,15 +6,15 @@ import Produto from '../../components/produto';
 
 const Loja = () => {
   return (
-    <div className='container h-screen overflow-hidden'>
-      <Propaganda />
-      <section className='grid grid-cols-4 h-full'>
+    <div className='container h-screen  '>
+      <section className='grid grid-cols-4 h-full overflow-hidden'>
+        <Propaganda />
         <div className='col-start-1'>
           <aside>
             <SideMenu />
           </aside>
         </div>
-        <article className='col-start-2 col-span-3 gap-3 h-full '>
+        <article className='col-start-2 col-span-3 gap-3 '>
           <div className=' col-span-3 items-start gap-3'>
             <SearchBar />
             <div className='grid grid-cols-3 gap-5 justify-between text-center'>
@@ -24,7 +24,7 @@ const Loja = () => {
             </div>
           </div>
         </article>
-        <div className='col-start-2 col-span-3 mt-3 overflow-y-scroll grid grid-cols-3 gap-3'>
+        <div className='col-start-2 col-span-3 mt-3 overflow-y-scroll grid grid-cols-3 gap-3 pb-3'>
           <Produto />
           <Produto />
           <Produto />
