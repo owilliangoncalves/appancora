@@ -4,7 +4,6 @@ import Logo from './components/logo';
 import Modal from './components/modal';
 import Image from './components/image';
 import ButtonHome from './components/buttonHome';
-import Teclado from './components/teclado';
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
@@ -20,7 +19,6 @@ export default function App() {
         <Modal IsTrue={open} />
         <Footer />
       </section>
-      <Teclado />
     </>
   );
 }

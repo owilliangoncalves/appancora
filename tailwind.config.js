@@ -20,6 +20,7 @@ export default {
         'vermelho-ancora': '#d02131',
         fundo: 'rgba(252, 252, 255, 0.95)',
         'azul-ancora-muted': 'rgba(2, 58,93, 0.3)',
+        muted: '#656565',
       },
     },
   },

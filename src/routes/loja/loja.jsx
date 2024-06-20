@@ -1,4 +1,3 @@
-import React from 'react';
 import Propaganda from '../../components/brand';
 import SideMenu from '../../components/sideMenu';
 import SearchBar from '../../components/searchBar';
@@ -24,7 +23,7 @@ const Loja = () => {
               <ButtonFilter texto='Tipo'></ButtonFilter>
             </div>
           </div>
-          <div className='gap-3'>
+          <div className=''>
             <Produto />
           </div>
           <div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import KitImage from '/public/kitImage.png';
 
 export default function Image() {
