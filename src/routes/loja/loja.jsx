@@ -6,16 +6,16 @@ import Produto from '../../components/produto';
 
 const Loja = () => {
   return (
-    <div className='container'>
+    <div className='container h-screen overflow-hidden'>
       <Propaganda />
-      <section className='grid grid-cols-3 '>
+      <section className='grid grid-cols-4 h-full'>
         <div className='col-start-1'>
           <aside>
             <SideMenu />
           </aside>
         </div>
-        <article className='col-start-2 col-span-2 grid grid-cols-3'>
-          <div className=' col-span-3 m-3 items-start gap-3'>
+        <article className='col-start-2 col-span-3 gap-3 h-full '>
+          <div className=' col-span-3 items-start gap-3'>
             <SearchBar />
             <div className='grid grid-cols-3 gap-5 justify-between text-center'>
               <ButtonFilter texto='Nome da peça'></ButtonFilter>
@@ -23,25 +23,36 @@ const Loja = () => {
               <ButtonFilter texto='Tipo'></ButtonFilter>
             </div>
           </div>
-          <div className=''>
-            <Produto />
-          </div>
-          <div>
-            <Produto />
-          </div>
-          <div>
-            <Produto />
-          </div>
-          <div>
-            <Produto />
-          </div>
-          <div>
-            <Produto />
-          </div>
-          <div>
-            <Produto />
-          </div>
         </article>
+        <div className='col-start-2 col-span-3 mt-3 overflow-y-scroll grid grid-cols-3 gap-3'>
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+          <Produto />
+        </div>
       </section>
     </div>
   );
