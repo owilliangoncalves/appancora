@@ -4,6 +4,12 @@
   font-style: normal;
   font-weight: bold;
 }
+.textInativeButton {
+  @apply Nunito text-azul-ancora border-solid border-2 border-azul-ancora mt-3 px-2 py-2 rounded-md;
+}
+.textActiveButton {
+  @apply bg-azul-ancora text-white Nunito mt-3 px-2 py-2 rounded-md border-solid border-2 border-azul-ancora;
+}
 
 @tailwind base;
 
