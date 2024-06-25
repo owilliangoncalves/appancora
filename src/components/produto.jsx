@@ -12,15 +12,15 @@ export default function Produto(props) {
   };
 
   return (
-    <div className='flex flex-col justify-center border-solid border-2 rounded-md border-azul-ancora shadow-md'>
-      <img
-        src={`https://catalogopdtstorage.blob.core.windows.net/imagens-prd/produto/${
-          props.imagemReal ?? defaultImage
-        }`}
-        alt='Imagem do Produto'
-        className='rounded-t-md aspect-9/10 object-contain'
-      />
-      <div className='ml-3 py-1'>
+    <div className='flex p-3 flex-wrap flex-row content-between justify-center border-solid border-2 rounded-md border-azul-ancora shadow-md bg-astronaut-blue-20'>
+      <div>
+        <img
+          src={`https://catalogopdtstorage.blob.core.windows.net/imagens-prd/produto/${
+            props.imagemReal ?? defaultImage
+          }`}
+          alt='Imagem do Produto'
+          className='rounded-t-md aspect-9/10 object-contain max-h-[200px]'
+        />
         <p className='font-bold Nunito'>{props.nomeProduto}</p>
         <p className='font-bold Nunito'>{props.marca}</p>
         <p className='text-azul-ancora-muted Nunito'>
@@ -36,6 +36,8 @@ export default function Produto(props) {
             style: 'currency',
           }).format(props.id / 100 / 10)}
         </p>
+      </div>
+      <div>
         <button
           className='bg-azul-ancora px-4 py-2 text-white rounded-md'
           onClick={() => handleAddToCart(props)}
