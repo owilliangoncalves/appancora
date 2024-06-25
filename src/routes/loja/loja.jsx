@@ -1,25 +1,25 @@
-import Propaganda from "../../components/brand";
-import SideMenu from "../../components/sideMenu";
-import SearchBar from "../../components/searchBar";
-import ButtonFilter from "../../components/buttonFilter";
-import Produto from "../../components/produto";
+import Propaganda from '../../components/brand';
+import SideMenu from '../../components/sideMenu';
+import SearchBar from '../../components/searchBar';
+import ButtonFilter from '../../components/buttonFilter';
+import Produto from '../../components/produto';
 // import Filter from "../../components/filter";
-import { useEffect, useState } from "react";
-import { fetchData } from "../../service/api";
-import Teclado from "../../components/teclado";
+import { useEffect, useState } from 'react';
+import { fetchData } from '../../service/api';
+import Teclado from '../../components/teclado';
 
 const Loja = () => {
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [activeInput, setActiveInput] = useState(false);
 
-  const tipoFiltro = "fabricante";
+  const tipoFiltro = 'fabricante';
 
   const searchByName = () => {
     const filteredProducts = products.filter((product) => {
-      if (tipoFiltro === "nomePeca") {
+      if (tipoFiltro === 'nomePeca') {
         return product.nomeProduto.toLowerCase().includes(search.toLowerCase());
-      } else if (tipoFiltro === "fabricante") {
+      } else if (tipoFiltro === 'fabricante') {
         return product.marca.toLowerCase().includes(search.toLowerCase());
       }
     });
@@ -27,7 +27,7 @@ const Loja = () => {
     setProducts(filteredProducts);
   };
 
-  const placa = "gao3f58";
+  const placa = 'gao3f58';
 
   async function loadData() {
     try {
@@ -35,7 +35,7 @@ const Loja = () => {
 
       setProducts(response.pageResult.data);
     } catch (error) {
-      console.log("Error", error);
+      console.log('Error', error);
     }
   }
 
@@ -44,60 +44,56 @@ const Loja = () => {
   }, []);
 
   useEffect(() => {
-    if (search === "") {
+    if (search === '') {
       loadData();
     }
     searchByName();
   }, [search]);
 
   return (
-    <div className="container h-screen  ">
+    <div className='container h-screen  '>
       {activeInput && (
         <div
           style={{
-            position: "absolute",
+            position: 'absolute',
             bottom: 0,
             left: 0,
-            width: "100%",
-            background: "#FFFFFF",
+            width: '100%',
+            background: '#FFFFFF',
           }}
         >
           <Teclado setSearch={setSearch} setActiveInput={setActiveInput} />
         </div>
       )}
-      <section className="grid grid-cols-4 h-full overflow-hidden">
+      <section className='grid grid-cols-4 h-full overflow-hidden'>
         <Propaganda />
-        <div className="grid items-end ">{/* <Filter/> */}</div>
-        <div className="col-start-1 row-start-3">
-          <aside className="mt-3 flex">
+        <div className='grid items-end '>{/* <Filter/> */}</div>
+        <div className='col-start-1 row-start-3'>
+          <aside className='mt-3 flex'>
             <SideMenu />
           </aside>
         </div>
-        <article className="col-start-2 col-span-3 gap-3 ">
-          <div className=" col-span-3 items-start gap-3 mx-3">
+        <article className='col-start-2 col-span-3 gap-3 '>
+          <div className=' col-span-3 items-start gap-3 mx-3'>
             <SearchBar
               activeInput={activeInput}
               setActiveInput={setActiveInput}
               search={search}
               setSearch={setSearch}
             />
-            <div className="grid grid-cols-3 gap-5 justify-between text-center">
+            <div className='grid grid-cols-2 gap-5 justify-between text-center'>
               <ButtonFilter
-                texto="Nome da peça"
-                className="textActiveButton"
+                texto='Nome da peça'
+                className='textActiveButton'
               ></ButtonFilter>
               <ButtonFilter
-                texto="Fabricante"
-                className="textInativeButton"
-              ></ButtonFilter>
-              <ButtonFilter
-                texto="Tipo"
-                className="textInativeButton"
+                texto='Fabricante'
+                className='textInativeButton'
               ></ButtonFilter>
             </div>
           </div>
         </article>
-        <div className="col-start-2 col-span-3 m-3 overflow-y-scroll grid grid-cols-3 gap-3 pb-3">
+        <div className='col-start-2 col-span-3 m-3 overflow-y-scroll grid grid-cols-3 gap-3 pb-3'>
           {products.length &&
             products.map((product) => (
               <Produto key={product.id} {...product} />

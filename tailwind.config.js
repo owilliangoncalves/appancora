@@ -7,7 +7,7 @@ export default {
         'bg-preto': "url('public/bg.png')",
       },
       aspectRatio: {
-        '9/16': '9/16',
+        '9/10': '9/10',
       },
       container: {
         center: true,
