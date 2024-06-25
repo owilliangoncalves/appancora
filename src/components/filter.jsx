@@ -1,10 +1,10 @@
-import ButtonFilter from './buttonFilter';
+import ButtonFilter from "./buttonFilter";
 
 const Filter = () => {
   return (
     <ButtonFilter
-      texto='Busca por filtro'
-      className='textActiveButton'
+      texto="Busca por filtro"
+      className="textActiveButton"
     ></ButtonFilter>
   );
 };
