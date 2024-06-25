@@ -5,19 +5,19 @@
   font-weight: bold;
 }
 .textInativeButton {
-  @apply Nunito text-azul-ancora border-solid border-2 border-azul-ancora mt-3 px-2 py-2 rounded-md;
+  @apply Nunito text-astronaut-blue-950 border-solid border-2 border-azul-ancora mt-3 px-2 py-2 rounded-md;
 }
 .textActiveButton {
-  @apply bg-azul-ancora text-white Nunito mt-3 px-2 py-2 rounded-md border-solid border-2 border-azul-ancora;
+  @apply bg-astronaut-blue-950 text-astronaut-blue-50 Nunito mt-3 px-2 py-2 rounded-md border-solid border-2 border-astronaut-blue-900;
 }
 
 @tailwind base;
 
 .Button {
-  @apply bg-azul-ancora py-3 px-2 rounded-2xl uppercase hover:bg-vermelho-ancora ease-in duration-300;
+  @apply bg-astronaut-blue-950 py-3 px-2 rounded-2xl uppercase hover:bg-vermelho-ancora ease-in duration-300;
 }
 .textButton {
-  @apply Nunito text-white uppercase text-xl;
+  @apply Nunito text-astronaut-blue-50 uppercase text-xl;
 }
 
 .containerResponsive {
