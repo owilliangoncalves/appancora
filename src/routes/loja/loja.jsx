@@ -51,7 +51,7 @@ const Loja = () => {
   }, [search]);
 
   return (
-    <div className='container h-screen bg-astronaut-blue-50 '>
+    <div className='container h-screen bg-astronaut-blue-20 '>
       {activeInput && (
         <div
           style={{

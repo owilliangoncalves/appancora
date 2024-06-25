@@ -12,7 +12,7 @@ export default function Produto(props) {
   };
 
   return (
-    <div className='flex p-3 flex-wrap flex-row content-between justify-center border-solid border-2 rounded-md border-azul-ancora shadow-md bg-astronaut-blue-20'>
+    <div className='flex p-3 flex-wrap flex-row content-between justify-center  rounded-md  shadow-sm bg-astronaut-blue-20'>
       <div>
         <img
           src={`https://catalogopdtstorage.blob.core.windows.net/imagens-prd/produto/${
