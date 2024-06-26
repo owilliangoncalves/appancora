@@ -1,5 +1,6 @@
 import Button from './buttonHome';
 import mostraModal from '../App';
+import { Link } from 'react-router-dom';
 
 export default function Modal({ IsTrue }) {
   if (IsTrue) {
@@ -20,7 +21,9 @@ export default function Modal({ IsTrue }) {
               </p>
             </div>
             <div>
-              <Button texto='sem placa' className='bg-azul-ancora-muted' />
+              <Link to='/loja'>
+              <Button texto='sem placa' className='bg-azul-ancora' />
+              </Link>
               <p className='text-azul-ancora px-14'>
                 A busca sem placa oferece uma seleção ampla de peças, adaptável
                 a diversos veículos.

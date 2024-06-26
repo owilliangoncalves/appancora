@@ -1,17 +1,24 @@
-import Propaganda from '../../components/brand';
-import SideMenu from '../../components/sideMenu';
-import SearchBar from '../../components/searchBar';
-import ButtonFilter from '../../components/buttonFilter';
-import Produto from '../../components/produto';
+
+import Propaganda from "../../components/brand";
+import SideMenu from "../../components/sideMenu";
+import SearchBar from "../../components/searchBar";
+import ButtonFilter from "../../components/buttonFilter";
+import Produto from "../../components/produto";
 // import Filter from "../../components/filter";
-import { useEffect, useState } from 'react';
-import { fetchData } from '../../service/api';
-import Teclado from '../../components/teclado';
+import { useEffect, useState } from "react";
+import { fetchData } from "../../service/api";
+import Teclado from "../../components/teclado";
+// import Cart from "../../components/Cart/cart";
 
 const Loja = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [activeInput, setActiveInput] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+
+  const mostraCarrinho = () => {
+    setOpenCart(!openCart)
+  }
 
   const tipoFiltro = 'fabricante';
 
@@ -51,6 +58,7 @@ const Loja = () => {
   }, [search]);
 
   return (
+    <>
     <div className='container h-screen bg-astronaut-blue-20 '>
       {activeInput && (
         <div
@@ -101,6 +109,8 @@ const Loja = () => {
         </div>
       </section>
     </div>
+      {/* <Cart event={mostraCarrinho} isTrue={openCart}/> */}
+      </>
   );
 };
 
