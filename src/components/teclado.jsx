@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { useEffect, useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Teclado(props) {
-  // armazenando texto que o usuario escreveu no text area
-  const [inputTexto, setInputText] = useState("");
+  const [inputTexto, setInputText] = useState('');
+  const tecladoRef = useRef(null);
 
-  // Adicionando letra a text area
-  const addLetras = (Letra) => {
-    setInputText(inputTexto + Letra);
+  const addLetras = (letra) => {
+    setInputText(inputTexto + letra);
   };
 
-  // limpar texto
   const limpar = () => {
-    setInputText("");
-    props.setSearch("");
+    setInputText('');
+    props.setSearch('');
   };
 
   const confirmar = () => {
@@ -25,53 +23,59 @@ export default function Teclado(props) {
     props.setSearch(inputTexto);
   }, [inputTexto]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (tecladoRef.current && !tecladoRef.current.contains(event.target)) {
+        props.setActiveInput(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [tecladoRef, props]);
+
   return (
-    <div className="flex flex-col items-center">
-      <textarea
-        readOnly
-        value={inputTexto}
-        className="w-full h-12 text-lg mb-4"
-      />
-      <div className="grid grid-cols-10 gap-2 mt-3 justify-items-center">
-        {/* Números de 0 a 9 */}
+    <div ref={tecladoRef} className='flex flex-col items-center container'>
+      <div className='grid grid-cols-10 gap-2 mt-3 justify-items-center'>
         {[...Array(10)].map((_, index_numero) => {
           const numero = index_numero;
           return (
             <button
               key={numero}
               onClick={() => addLetras(numero.toString())}
-              className="w-10 h-10 text-base bg-azul-ancora hover:bg-azul-ancora-muted text-white rounded"
+              className='w-10 h-10 text-base bg-astronaut-blue-950 hover:bg-astronaut-blue-800  text-astronaut-blue-20 rounded'
             >
               {numero}
             </button>
           );
         })}
-        {/* Letras de A a Z */}
-        {"QWERTYUIOPASDFGHJKLÇZXCVBNM-".split("").map((letra) => (
+
+        {'QWERTYUIOPASDFGHJKLÇZXCVBNM-'.split('').map((letra) => (
           <button
             key={letra}
             onClick={() => addLetras(letra)}
-            className="w-10 h-10 text-base bg-azul-ancora hover:bg-azul-ancora-muted text-white rounded"
+            className='w-10 h-10 text-base bg-astronaut-blue-950 hover:bg-astronaut-blue-800  text-astronaut-blue-20 rounded'
           >
             {letra}
           </button>
         ))}
       </div>
-      <div className="flex mt-5 mb-5 gap-x-5">
+      <div className='flex mt-5 mb-5 gap-x-5'>
         <button
           onClick={limpar}
-          className="p-2 w-[100px] text-base bg-red-500 hover:bg-red-600 text-white rounded"
+          className='p-2 w-[100px] text-base bg-red-500 hover:bg-red-600 text-astronaut-blue-20 rounded'
         >
           Limpar
         </button>
         <button
-          onClick={() => addLetras(" ")}
-          className="w-96 h-10  text-base bg-gray-300 hover:bg-gray-400 text-black rounded"
+          onClick={() => addLetras(' ')}
+          className='w-96 h-10 text-base bg-gray-300 hover:bg-gray-400 text-black rounded'
         ></button>
         <button
-          //   onClick={() => alert(`Texto inserido: ${inputTexto}`)}
           onClick={() => confirmar()}
-          className="p-2 w-[100px] text-base bg-green-500 hover:bg-green-600 text-white rounded"
+          className='p-2 w-[100px] text-base bg-green-500 hover:bg-green-600 text-astronaut-blue-20 rounded'
         >
           Confirmar
         </button>

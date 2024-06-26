@@ -67,13 +67,13 @@ const Loja = () => {
       )}
       <section className='grid grid-cols-4 h-full overflow-hidden'>
         <Propaganda />
-        <div className='grid items-end '>{/* <Filter/> */}</div>
+
         <div className='col-start-1 row-start-3'>
           <aside className='mt-3 flex'>
             <SideMenu />
           </aside>
         </div>
-        <article className='col-start-2 col-span-3 gap-3 '>
+        <article className='col-start-2 col-span-2 gap-3 my-3'>
           <div className=' col-span-3 items-start gap-3 mx-3'>
             <SearchBar
               activeInput={activeInput}
