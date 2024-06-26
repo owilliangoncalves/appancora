@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Modal({ IsTrue }) {
   if (IsTrue) {
     return (
-      <div className='  grid absolute top-0 w-[768px] h-full bg-fundo grid-rows-2'>
+      <div className='grid absolute top-0 w-[768px] h-full bg-fundo grid-rows-2'>
         <div className='row-start-1 col-span-1 flex items-center justify-center'>
           <p className='uppercase text-azul-ancora font-bold Nunito text-2xl'>
             escolha como quer buscar
@@ -14,7 +14,9 @@ export default function Modal({ IsTrue }) {
         <div className='row-start-2'>
           <div className='grid grid-cols-2 '>
             <div className='place-items-center'>
-              <Button onClick={mostraModal} texto='com placa' />
+              <Link to='/buscaPlaca'>
+                <Button onClick={mostraModal} texto='com placa' />
+              </Link>
               <p className='text-azul-ancora px-14'>
                 A busca por placa assegura que as peças exibidas são específicas
                 para o veículo.

@@ -1,9 +1,12 @@
+import "./index.css";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loja from "./routes/loja/loja";
+import BuscaPlaca from "./routes/buscaPlaca/buscaPlaca";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CartProvider } from "./context/cart";
 
 const router = createBrowserRouter([
@@ -14,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/loja",
     element: <Loja />,
+  },
+  {
+    path: '/buscaPlaca',
+    element: <BuscaPlaca />
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
