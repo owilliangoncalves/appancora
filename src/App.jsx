@@ -7,14 +7,14 @@ import ButtonHome from './components/buttonHome';
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
-const [openCart, setOpenCart] = React.useState(false);
+  const [openCart, setOpenCart] = React.useState(false);
   function mostraModal() {
     setOpen(!open);
   }
 
   const mostraCarrinho = () => {
-    setOpenCart(!openCart)
-  }
+    setOpenCart(!openCart);
+  };
 
   return (
     <section className='bg-bg-preto grid grid-rows-5 h-[100vh]  bg-cover container'>
