@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { createContext, useContext, useState } from 'react';
+import PropTypes from "prop-types";
+import { createContext, useContext, useState } from "react";
 
 export const CartContext = createContext([]);
 
@@ -10,7 +10,7 @@ export const CartProvider = (props) => {
     try {
       setCart((prevCart) => {
         const existingItemIndex = prevCart.findIndex(
-          (cartItem) => cartItem.id === item.id,
+          (cartItem) => cartItem.id === item.id
         );
 
         if (existingItemIndex !== -1) {
@@ -26,7 +26,7 @@ export const CartProvider = (props) => {
         }
       });
     } catch (error) {
-      console.error('Error adding item to cart:', error);
+      console.error("Error adding item to cart:", error);
     }
   };
 
@@ -34,12 +34,12 @@ export const CartProvider = (props) => {
     try {
       setCart((prevCart) => {
         const updatedCart = prevCart.filter(
-          (item) => item.id !== itemToRemove.id,
+          (item) => item.id !== itemToRemove.id
         );
         return updatedCart;
       });
     } catch (error) {
-      console.error('Error removing item from cart:', error);
+      console.error("Error removing item from cart:", error);
     }
   };
 
@@ -60,7 +60,7 @@ export const CartProvider = (props) => {
           .filter((item) => item.quantity > 0);
       });
     } catch (error) {
-      console.error('Error decrementing item quantity:', error);
+      console.error("Error decrementing item quantity:", error);
     }
   };
 
@@ -87,7 +87,7 @@ export const CartProvider = (props) => {
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('Algo de errado com o contexto');
+    throw new Error("Algo de errado com o contexto");
   }
   return context;
 };
