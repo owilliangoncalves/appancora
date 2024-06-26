@@ -1,4 +1,4 @@
-import ButtonSide from './buttonSide';
+import ButtonSide from './Button/buttonSide';
 
 export default function SideMenu() {
   return (

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { useCart } from "../context/cart";
+import { useCart } from "../context/CartContext";
 
 import defaultImage from "/public/default.png";
 
@@ -14,17 +14,17 @@ export default function Produto(props) {
   };
 
   return (
-    <div className="flex flex-col justify-center border-solid border-2 rounded-md border-azul-ancora shadow-md">
+    <div className="flex flex-col object-contain justify-center border-solid border-2 rounded-md border-azul-ancora shadow-md">
       <img
         src={`https://catalogopdtstorage.blob.core.windows.net/imagens-prd/produto/${
           props.imagemReal ?? defaultImage
         }`}
         alt="Imagem do Produto"
-        className="rounded-t-md"
+        className="rounded-t-md min-h-[40%] max-h-[50%]"
       />
       <div className="ml-3 py-1">
         <p className="font-bold Nunito">{props.nomeProduto}</p>
-        <p className="font-bold Nunito">{props.marca}</p>
+        <p className="font-bold Nunito ">{props.marca}</p>
         <p className="text-azul-ancora-muted Nunito">
           {new Intl.NumberFormat("pt-BR", {
             currency: "BRL",
