@@ -107,7 +107,9 @@ const Loja = () => {
               <Produto key={product.id} {...product} />
             ))}
         </div>
-        <Cart event={mostraCarrinho} isTrue={openCart}/>
+        {!activeInput && 
+        <Cart event={mostraCarrinho} isTrue={openCart}/>}
+        
       </section>
       </div>
       </>
