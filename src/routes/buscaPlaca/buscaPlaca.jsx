@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import {
+  Link,
+  redirect,
+  redirectDocument,
+  useNavigate,
+} from 'react-router-dom';
 import Teclado from '../../components/teclado';
 
+import { fetchData } from '../../service/api';
+import { PlacaContext } from '../../context/placa';
+
 export default function buscaPlaca() {
+  const placaContext = useContext(PlacaContext);
+  const navigate = useNavigate();
+
   const regex = '[A-Z]{3}[0-9][0-9A-Z][0-9]{2}';
 
-  const [placa, setPlaca] = useState('AAA-0000');
+  const [placa, setPlaca] = useState('');
   const [activeInput, setActiveInput] = useState(false);
 
   const handleInputClick = () => {
@@ -15,6 +26,31 @@ export default function buscaPlaca() {
   const handleInputBlur = () => {
     setActiveInput(false);
   };
+
+  const handlerPlaca = (e) => {
+    setPlaca(e.target.value);
+  };
+
+  useEffect(() => {
+    const handleSubmit = async () => {
+      try {
+        if (placa.length !== 7) return;
+
+        const response = await fetchData(placa);
+
+        if (!response) throw new Error('Placa não existe');
+
+        // Se a placa existir, continuara aqui
+        console.log('placa existe');
+        placaContext.setPlaca(placa);
+        navigate('/loja');
+      } catch (err) {
+        // Se der erro na solicitação, caira para ca
+        console.log(err);
+      }
+    };
+    handleSubmit();
+  }, [placa]);
 
   return (
     <>
@@ -51,6 +87,7 @@ export default function buscaPlaca() {
             name=''
             id=''
             placeholder={placa}
+            onChange={handlerPlaca}
             onClick={handleInputClick}
           />
           {activeInput && (

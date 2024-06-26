@@ -5,16 +5,18 @@ import SearchBar from "../../components/searchBar";
 import ButtonFilter from "../../components/buttonFilter";
 import Produto from "../../components/produto";
 // import Filter from "../../components/filter";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchData } from "../../service/api";
 import Teclado from "../../components/teclado";
 import Cart from "../../components/Cart/cart";
+import { PlacaContext } from "../../context/placa";
 
 const Loja = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [activeInput, setActiveInput] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const { placa } = useContext(PlacaContext);
 
   const mostraCarrinho = () => {
     setOpenCart(!openCart)
@@ -33,8 +35,6 @@ const Loja = () => {
 
     setProducts(filteredProducts);
   };
-
-  const placa = 'gao3f58';
 
   async function loadData() {
     try {
