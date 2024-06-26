@@ -8,7 +8,7 @@ import Produto from "../../components/produto";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../service/api";
 import Teclado from "../../components/teclado";
-// import Cart from "../../components/Cart/cart";
+import Cart from "../../components/Cart/cart";
 
 const Loja = () => {
   const [products, setProducts] = useState([]);
@@ -59,7 +59,7 @@ const Loja = () => {
 
   return (
     <>
-    <div className='container h-screen bg-astronaut-blue-20 '>
+    <div className='container h-screen bg-astronaut-blue-20 relative'>
       {activeInput && (
         <div
           style={{
@@ -107,9 +107,9 @@ const Loja = () => {
               <Produto key={product.id} {...product} />
             ))}
         </div>
+        <Cart event={mostraCarrinho} isTrue={openCart}/>
       </section>
-    </div>
-      {/* <Cart event={mostraCarrinho} isTrue={openCart}/> */}
+      </div>
       </>
   );
 };
