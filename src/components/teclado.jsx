@@ -75,7 +75,7 @@ export default function Teclado(props) {
         ></button>
         <button
           onClick={() => confirmar()}
-          className='p-2 w-[100px] text-base bg-green-500 hover:bg-green-600 text-astronaut-blue-20 rounded'
+          className='p-2 w-[100px] text-base bg-green-900 hover:bg-green-600 text-astronaut-blue-20 rounded'
         >
           Confirmar
         </button>
